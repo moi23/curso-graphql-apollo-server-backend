@@ -1,0 +1,16 @@
+{
+  "name": "Curso_Apollo_Server_Graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^3.1.1",
+    "eslint-prettier-setup": "https://github.com/luizomf/eslint-prettier",
+    "graphql": "^15.5.1",
+    "nodemon": "^2.0.12",
+    "sucrase": "^3.20.0"
+  },
+  "scripts": {
+    "dev": "nodemon -r sucrase/register  src/index.js"
+  }
+}
