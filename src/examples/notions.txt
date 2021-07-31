@@ -1,0 +1,64 @@
+TypeDefs, Resolvers, Query, Tipos Escalares, ObjectTypes
+
+
+
+
+Typedefs é a onde você define os grafos
+que o seu projeto terá
+
+dentro do template literals você
+abre um type NOME {
+  hello: String
+}
+e sai definindo o que irá conter
+
+NOTA: uma vez que definido um typeDef
+terá que existir um Resolver
+
+exemplo:
+resolvers:{
+  Query:{
+    hello: ()=> {
+      return "ele tem que retornar o que tu definiu no typeDef"
+    }
+  }
+}
+
+
+Tipos escalares, são tipo no javascript como "tipos primitivos", por padrão o graphql
+interpreta como nullable, mas podemos declarar para não interpretar campos nulos,
+
+basta colocar um ! no final do tipo.
+
+podemos definir que irá receber um array de strings.
+basta definir dentro do typeDefs o campo nome: [String]
+
+ex:
+  typeDefs: gql`
+    type Query {
+      id:ID,
+      name:String,
+      year: Int,
+      decimal: Float,
+      human: Boolean!,
+      arrayString:[String]
+    }
+  `;
+
+
+
+/* Object Types e Root Types */
+
+ex: typeDefs: gql`
+
+type Query{
+  user:User
+}
+
+type User {
+  id:ID!,
+  userName: String!
+}
+
+
+`;
